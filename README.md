@@ -1,4 +1,9 @@
+# Notes
+64-bit registers start with R
+32-bit registers start with E
+16-bit registers have two letter names
 
+# Register Types
 General Registers - data registers (eax, ebx, ecx, edx), pointer registers(eip, esp, ebp), index registers(si, di)
 
 Control Registers - instruction registers & flag registers
@@ -69,9 +74,9 @@ DS - 16-bit data segment register, stores the starting address of the data segme
 SS - 16-bit stack segment register, stores the starting address of the stack segment
 
 # Sections 
-section .data = initialized data section
-section .bss = unitialized data section
-section .text = code segment, requires 'global _start_' inside
+section .data - initialized data section, (for constant variables)
+section .bss - (block starting symbol) unitialized data section, (for non-constant variables)
+section .text - code segment, requires 'global _start' inside
 
 
 

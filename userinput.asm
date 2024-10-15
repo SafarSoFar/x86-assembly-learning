@@ -1,6 +1,6 @@
 section .data
   userMsg db 'Enter a number: ', 0xa
-  lenUserMsg equ $ - userMsg ; equ defines a label to a CONSTANT VALUE and right on the spot without further mov
+  lenUserMsg equ $ - userMsg ; equ (equate) defines a label to a CONSTANT VALUE and right on the spot without further mov
   ; $ means the current address position, 
   ; so in order to get the len we substract the current pos with the message address pos
   dispMsg db 'You have entered: ', 0xa
