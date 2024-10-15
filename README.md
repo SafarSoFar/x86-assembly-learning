@@ -68,6 +68,10 @@ CS - 16-bit code segment register, stores the starting address of the code segme
 DS - 16-bit data segment register, stores the starting address of the data segment
 SS - 16-bit stack segment register, stores the starting address of the stack segment
 
+# Sections 
+section .data = initialized data section
+section .bss = unitialized data section
+section .text = code segment, requires 'global _start_' inside
 
 
 
