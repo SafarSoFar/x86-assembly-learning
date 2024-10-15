@@ -43,4 +43,32 @@ EBP - 32-bit base pointer
 ESI - 32-bit source index pointer
 EDI - 32-bit destination index pointer
 
+# Segments 
+Code segment - contains all the instructions for execution
+Data segment - contains data, constants, work areas
+Stack segment - contains data, return addresses of processes/subroutines.
+Implemented as a 'stack' data structure (Last In First Out)
+
+_Extra segments_
+ES, FS, GS - additional segments for storing data
+
+All memory locations within a segment are relative to the starting
+address of the segment. A segment begins in an address evenly divisible
+by 16 or hexadecimal 10. So the rightmost hex digit in all such memory
+addresses is 0, which is not generally stored in the segment registers
+
+_The segment registers store the starting point of a segment. To get the
+exact location of data or instruction within a instruction - an offset value is required_
+To reference any memory location in a segment, the processor combines the segment
+address in the segment register with the offset value of the location
+
+
+# Segment Registers
+CS - 16-bit code segment register, stores the starting address of the code segment
+DS - 16-bit data segment register, stores the starting address of the data segment
+SS - 16-bit stack segment register, stores the starting address of the stack segment
+
+
+
+
 
