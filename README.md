@@ -88,5 +88,36 @@ registers are located, are:
   * For floating-point (float,double): xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6, xmm7 
 * Additional parameters are pushed to the stack, right to left, and are to be removed by the caller after the call
 
+# Allocating Storage Space for Initialized Data
+Five basic forms of the define directive:
+db - Define Byte - allocates 1 byte
+dw - Define Word - allocates 2 bytes
+dd - Define Doubleword - allocates 4 bytes
+dq - Define Quadword - allocates 8 bytes
+dt - Define Ten Bytes - allocates 10 bytes
+<br>
+Five basic forms of the reserve directive:
+resb - reserve a byte
+resw - reserve a word
+resd - reserve a doubleword
+resq - reserve a quadword
+rest - reserve ten bytes
+
+Notes:
+* Each byte of character is stored as its ASCII value in hex
+* Each decimal value is automatically converted to its 16-bit binary equivalent and stored as a hex
+* Processor uses the little-endian byte ordering
+* Negative numbers are converted to its 2's complement representation
+* Short and long floating-point numbers are represented using 32 or 64 bits, respectively.
+
+# Multiple Initializations
+The TIMES directive allows multiple initializations to the same value.
+```
+marks TIMES 9 DW 0
+```
+The TIMES directive is useful when defining arrays and tables
+```
+
+```
 
 
