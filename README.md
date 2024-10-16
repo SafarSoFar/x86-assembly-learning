@@ -78,6 +78,15 @@ section .data - initialized data section, (for constant variables)
 section .bss - (block starting symbol) unitialized data section, (for non-constant variables)
 section .text - code segment, requires 'global _start' inside
 
+# Calling Conventions
+When writing code for 64-bit Linux that integrates C Lib, there are required calling Conventions
+The most important points of the calling conventions:
+
+* From left to right, pass as many parameters as will fit the registers. The order in which
+registers are located, are: 
+  * For integers and pointers: rdi, rsi, rdx, rcx, r8, r9
+  * For floating-point (float,double): xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6, xmm7 
+* Additional parameters are pushed to the stack, right to left, and are to be removed by the caller after the call
 
 
 
